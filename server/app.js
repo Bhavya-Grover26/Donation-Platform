@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose  = require('mongoose')
 const PORT=5000
-const {MONGOURI} = require('./keys')
+const {JWT_SECRET, MONGOURI}= require('../config/keys')
 
 
 require('./models/user')
@@ -21,7 +21,7 @@ mongoose.connect(MONGOURI,{
 
 })
 
-mongoose.connect(MONGOURI)
+
 mongoose.connection.on('connected',()=>{
     console.log("connected to mongoooooooo")
 })
@@ -35,7 +35,14 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
   });
   
+  if(process.env.NODE_ENV=='production'){
+    const path = require('path')
 
+    app.get('/',(req,res)=>{
+        app.use(express.static(path.resolve(__dirname,'client','build')))
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'))
+    })
+}
 
 app.listen(PORT,()=>{
     console.log("server is running on",PORT)
