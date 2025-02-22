@@ -6,6 +6,7 @@ For NGOs:
  - Donation Tracking: NGOs can monitor donations received for each event.
  - Profile Management: NGOs can maintain profiles, showcasing their missions and past events.
  - Communication Tools: NGOs can engage with users through notifications and updates.
+
 For Users:
  - Event Discovery: Users can explore various NGO-hosted events based on category, location, and cause.
  - Easy Donations: Users can donate directly through the platform.
