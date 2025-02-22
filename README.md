@@ -1,0 +1,1 @@
+This project is a web-based platform designed to connect Non-Governmental Organizations (NGOs) with users willing to contribute to social causes. The platform serves as a bridge between NGOs hosting charitable events and users looking to donate and support these causes.
